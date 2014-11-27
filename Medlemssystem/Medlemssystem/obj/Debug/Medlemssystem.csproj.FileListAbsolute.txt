@@ -16,3 +16,13 @@ C:\Users\John\Desktop\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.pdb
 C:\Users\John\Desktop\Medlemssystem\Medlemssystem\bin\Debug\Medlemssystem.exe
 C:\Users\John\Desktop\Medlemssystem\Medlemssystem\bin\Debug\Medlemssystem.pdb
 C:\Users\John\Desktop\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.csprojResolveAssemblyReference.cache
+C:\Users\jh222vp\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\bin\Debug\Medlemssystem.exe.config
+C:\Users\jh222vp\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.exe
+C:\Users\jh222vp\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.pdb
+C:\Users\jh222vp\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.csprojResolveAssemblyReference.cache
+C:\Users\John\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\bin\Debug\Medlemssystem.exe.config
+C:\Users\John\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.exe
+C:\Users\John\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.pdb
+C:\Users\John\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\obj\Debug\Medlemssystem.csprojResolveAssemblyReference.cache
+C:\Users\John\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\bin\Debug\Medlemssystem.exe
+C:\Users\John\Desktop\UML_WorkShop_2-master\Medlemssystem\Medlemssystem\bin\Debug\Medlemssystem.pdb
