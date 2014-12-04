@@ -8,10 +8,8 @@ namespace Medlemssystem
 {
     class Presentation
     {
-
         public void GetMenu()
         {
-            //visar en grundmeny
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.White;
@@ -67,6 +65,7 @@ namespace Medlemssystem
         }
         public void UserIsAdded()
         {
+            Console.Clear();
             Console.BackgroundColor = ConsoleColor.DarkYellow;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("========================================");
@@ -176,8 +175,22 @@ namespace Medlemssystem
             Console.WriteLine("========================================\n");
             Console.ResetColor();
         }
+
+        public void EditBoat()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("========================================");
+            Console.WriteLine("=                                      =");
+            Console.WriteLine("=         Editera Båt                  =");
+            Console.WriteLine("=                                      =");
+            Console.WriteLine("========================================\n");
+            Console.ResetColor();
+        }
+
         public void MemberIsEdit()
         {
+            Console.Clear();
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("========================================");
@@ -188,97 +201,194 @@ namespace Medlemssystem
             Console.ResetColor();
         }
 
-        public void UserListFull()
+        public void displayOutPutQuery(List<Member> members, List<Boat> boats)
         {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("========================================");
-            Console.WriteLine("=                                      =");
-            Console.WriteLine("=   Inga platser finns i systemet.     =");
-            Console.WriteLine("=                                      =");
-            Console.WriteLine("========================================\n");
-            Console.ResetColor();
+            foreach (var member in members)
+            {
+                int uID = member.MemberId;
+                Console.Write(member.MemberId);
+                Console.Write("  ");
+                Console.Write(member.FirstName);
+                Console.Write("  ");
+                Console.Write(member.LastName);
+                Console.Write("  ");
+                Console.Write(member.Ssn);
+                Console.Write("  ");
+
+                foreach (var boat in boats)
+                {
+                    if (boat.MemberId == uID)
+                    {
+                        Console.Write(boat.BoatId);
+                        Console.Write("  ");
+                        Console.Write(boat.BoatTypeId);
+                        Console.Write("  ");
+                        Console.Write(boat.Length);
+                        Console.WriteLine("");
+                    }
+                }
+            }
         }
 
-        public void displayOutPutQuery(List<string> queryStringList)
+        public void displayBoatOutPutQuery(List<Member> member, List<Boat> boat)
         {
-            Program program = new Program();
-            queryStringList.ForEach(i => Console.Write("{0}\n", i));
-            program.ContinueOnKeyPressed();
+            foreach (var members in member)
+            {
+                int id = members.MemberId;
+                Console.Write(members.MemberId);
+                Console.Write("  ");
+                Console.Write(members.FirstName);
+                Console.Write("  ");
+                Console.WriteLine(members.LastName);
+                Console.Write("  ");
+                foreach (var boats in boat)
+                {
+                    if (id == boats.MemberId)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.Write("Antal båtar: ");
+                        Console.Write(members.BoatCount);
+                        Console.WriteLine("");
+                        Console.ResetColor();
+                        break;
+                    }
+                    else if (id != boats.MemberId)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.Write("Antal båtar: ");
+                        Console.Write(members.BoatCount);
+                        Console.WriteLine("");
+                        Console.ResetColor();
+                        break;
+                    }
+                }
+            }
         }
-
+        
         public string getUserName()
         {
             Console.Write("Skriv in förnamn: ");
             string fname = Console.ReadLine();
             return fname;
         }
+
         public string getLastName()
         {
             Console.Write("Skriv in efternamn: ");
             string lname = Console.ReadLine();
             return lname;
         }
+
         public int getSocialSecurityNumber()
         {
             Console.Write("Skriv in personnummer: ");
             int pnumber = int.Parse(Console.ReadLine());
             return pnumber;
         }
-        public void hosVem(int choice)
+
+        public int hosVem()
         {
-            switch (choice)
-            {
-                case 1: { Console.Write("Hos vem?.."); break; }
-                case 2: { Console.Write("Hur lång är båten: "); break; }
-                case 3:
-                    {
-                        Console.WriteLine("Vad vill du lägga till för båt?");
-                        Console.WriteLine("1.Segelbåt 2.Motorseglare 3.Motorbåt 4.Kajak/Kanot 5.Övrigt"); break;
-                    }
-            }
-            
+           Console.Write("Hos vem?: ");
+           int userChoice = int.Parse(Console.ReadLine());
+           return userChoice;
         }
 
-        public void deleteUInteraction()
+        public string LenghtInBoat()
+        {
+            Console.Write("Hur lång är båten: ");
+            string boatLength = Console.ReadLine();
+            return boatLength;
+        }
+
+        public string whatBoatType()
+        {
+            Console.WriteLine("Vad vill du lägga till för båt?");
+            Console.WriteLine("1.Segelbåt 2.Motorseglare 3.Motorbåt 4.Kajak/Kanot 5.Övrigt");
+            string boatType = Console.ReadLine();
+            return boatType;
+        }
+
+        public int deleteUInteraction()
         {
             Console.Write("Vilken användare vill du ta bort?: ");
+            int deleteChoice = int.Parse(Console.ReadLine());
+
+            return deleteChoice;
+        }
+        /*===========DELETEBOATVIEW===================*/
+        public int SelectBoatToDelete()
+        {
+            Console.WriteLine("Vilken båt vill du ta bort..?");
+            int userBoatChoice = int.Parse(Console.ReadLine());
+
+            return userBoatChoice;
+        }
+        /*============EditBoatView===================*/
+        public int WhoToEditBoatTo()
+        {
+            Console.Write("Vilken medlem vill du ändra en båt hos: ");
+            int userChoice = int.Parse(Console.ReadLine());
+
+            return userChoice;
         }
 
-        public void DeleteBInteraction(int choice)
+        public int WhatTypeOfBoatEdit()
         {
-            switch (choice)
-            {
-                case 1: { Console.WriteLine("Vilken medlem vill du ta bort en båt hos..?"); break; }
-                case 2: { Console.WriteLine("Vilken båt vill du ta bort..?"); break; }
-            }
+            Console.WriteLine("Vilken båt vill ändra..?");
+            int userBoatChoice = int.Parse(Console.ReadLine());
+
+            return userBoatChoice;
         }
 
-        public void EditBInteraction(int choice)
+        public string WhatTypeOfBoatLength()
         {
-            switch (choice)
-            {
-                case 1: { Console.Write("Vilken medlem vill du ändra en båt hos: "); break; }
-                case 2: { Console.WriteLine("Vilken båt vill ändra..?"); break; }
-                case 3: { Console.WriteLine("Ange nya båtvärden.."); Console.WriteLine("Ny båtlängd:"); break; }
-                case 4:
-                    {
-                        Console.WriteLine("Ange en ny båttyp:");
-                        Console.WriteLine("1.Segelbåt 2.Motorseglare 3.Motorbåt 4.Kajak/Kanot 5.Övrigt");
-                        break;
-                    }
-            }
+            Console.WriteLine("Ange nya båtvärden.."); 
+            Console.WriteLine("Ny båtlängd:");
+            string newBoatLength = Console.ReadLine();
+
+            return newBoatLength;
         }
 
-        public void EditUInteraction(int choice)
+        public string WhatTypeOfBoat()
         {
-            switch (choice)
-            {
-                case 1: { Console.Write("Välj vem du vill editera: "); break; }
-                case 2: { Console.WriteLine("Skriv in nytt förnamn: "); break; }
-                case 3: { Console.WriteLine("Skriv in nytt efternamn: "); break; }
-                case 4: { Console.WriteLine("Skriv in nytt personnummer:"); break;}
-            }
+            Console.WriteLine("Ange en ny båttyp:");
+            Console.WriteLine("1.Segelbåt 2.Motorseglare 3.Motorbåt 4.Kajak/Kanot 5.Övrigt");
+            string newBoatype = Console.ReadLine();
+
+            return newBoatype;
+        }
+        
+        /*===============EDITUSER==============*/
+        public string WhoToEditUser()
+        {
+            Console.Write("Välj vem du vill editera: ");
+            string userEdit = Console.ReadLine();
+
+            return userEdit;
+        }
+
+        public string WhoToEditFname()
+        {
+            Console.WriteLine("Skriv in nytt förnamn: ");
+            string fName = Console.ReadLine();
+
+            return fName;
+        }
+
+        public string WhoToEditLname()
+        {
+            Console.WriteLine("Skriv in nytt efternamn: ");
+            string lName = Console.ReadLine();
+
+            return lName;
+        }
+
+        public string WhoToEditSSN()
+        {
+            Console.WriteLine("Skriv in nytt personnummer:");
+            string pNumber = Console.ReadLine();
+
+            return pNumber;
         }
     }
 }

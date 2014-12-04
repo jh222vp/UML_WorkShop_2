@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-
 namespace Medlemssystem
 {
-
     /// <summary>
-    /// This is an application create by Sandra Hanson and Jonas Holte WP13
+    /// This is an application create by Sandra Hanson and Jonas Holte WP13 2014-11-27
     /// for the course "Objektorienterad analys och design med UML"
     /// </summary>
 
@@ -60,10 +58,23 @@ namespace Medlemssystem
             Console.ReadKey();
         }
 
+        public void ShowUserInfo()
+        {
+            List<Member> member = showUser.ShowCompleteUser();
+            List<Boat> boat = showUser.ShowCompleteUserBoats();
+            presentation.displayOutPutQuery(member, boat);
+        }
+        public void ShowUserInforSmall()
+        {
+            List<Member> member = showUser.ShowUsers();
+            List<Boat> boat = showUser.ShowCompleteUserBoats();
+            presentation.displayBoatOutPutQuery(member, boat);
+        }
+
         public void AddUser()
         {
             presentation.Adduser();
-            //Samlar in information från användaren..
+            //Samlar in information från användaren
             string firstname = presentation.getUserName();
             string lastname = presentation.getLastName();
             int socialSecNumber = presentation.getSocialSecurityNumber();
@@ -71,11 +82,19 @@ namespace Medlemssystem
             addUserToDatabase.addUser(firstname, lastname, socialSecNumber);
             presentation.UserIsAdded();
             ContinueOnKeyPressed();
+            Menu();
         }
 
         public void EditBoats()
         {
-            editBoat.EditBoats();
+            presentation.EditBoat();
+            ShowUserInfo();
+
+            int userChoice = presentation.WhoToEditBoatTo();
+            int userBoatChoice = presentation.WhatTypeOfBoatEdit();
+            string newBoatLength = presentation.WhatTypeOfBoatLength();
+            string newBoatyp = presentation.WhatTypeOfBoat();
+            editBoat.EditBoats(userChoice, userBoatChoice, newBoatLength, newBoatyp);
             presentation.BoatIsEdited();
             ContinueOnKeyPressed();
         }
@@ -83,70 +102,74 @@ namespace Medlemssystem
         public void ShowCompleteUser()
         {
             presentation.ListAllMembers();
-            showUser.ShowCompleteUser();
+            ShowUserInfo();
+            ContinueOnKeyPressed();
         }
-        public void DeleteBoats()
+
+        public void ShowCompleteUserBoat()
         {
-            deleteBoat.DeleteBoats();
-            presentation.BoatIsDeleted();
+            ShowUserInforSmall();
+            ContinueOnKeyPressed();
         }
 
         public void AddBoatToUser()
         {
+            ShowCompleteUserBoat();
             presentation.AddBoat();
-            addBoat.AddBoatToMember();
+            int withWho = presentation.hosVem();
+            string boatLenght = presentation.LenghtInBoat();
+            string whatBoatType = presentation.whatBoatType();
+            addBoat.AddBoatToMember(withWho, boatLenght, whatBoatType);
+            Console.Clear();
             presentation.BoatIsAdded();
+            ContinueOnKeyPressed();
         }
 
         public void EditUsers()
         {
             presentation.EditUsers();
-            editUser.EditUserInfo();
+            ShowUserInforSmall();
+
+            string userEdit = presentation.WhoToEditUser();
+            string fName = presentation.WhoToEditFname();
+            string lName = presentation.WhoToEditLname();
+            string SSN = presentation.WhoToEditSSN();
+            editUser.EditUserInfo(userEdit, fName, lName, SSN);
             presentation.MemberIsEdit();
+            ContinueOnKeyPressed();
         }
 
         public void ShowUsers()
         {
             presentation.ListMembers();
-            showUser.ShowUsers();
-
+            ShowCompleteUserBoat();
         }
 
         public void DeleteUsers()
         {
+            ShowUserInfo();
             presentation.DeletePresentation();
-            delete.DeleteUsers();
+            int deleteChoice = presentation.deleteUInteraction();
+            delete.DeleteUsers(deleteChoice);
             presentation.UserIsDeleted();
+            ContinueOnKeyPressed();
+            Console.Clear();
         }
 
-        public void readQuery(List<string> queryStringList)
+        public void DeleteBoats()
         {
-            presentation.displayOutPutQuery(queryStringList);
+            ShowUserInfo();
+            int userChoice = presentation.hosVem();
+            int userBoatChoice = presentation.SelectBoatToDelete();
+
+            deleteBoat.DeleteBoats(userChoice, userBoatChoice);
+            presentation.BoatIsDeleted();
+            ContinueOnKeyPressed();
         }
 
-        public void AddBoatInteraction(int choice)
+        public void readQuery(List<Member> members, List<Boat> boats)
         {
-            presentation.hosVem(choice);
-        }
-
-        public void DeleteUInteraction()
-        {
-            presentation.deleteUInteraction();
-        }
-
-        public void DeleteBoatInteraction(int choice)
-        {
-            presentation.DeleteBInteraction(choice);
-        }
-
-        public void EditBoatInteraction(int choice)
-        {
-            presentation.EditBInteraction(choice);
-        }
-
-        public void EditUserInteraction(int choice)
-        {
-            presentation.EditUInteraction(choice);
+            presentation.displayOutPutQuery(members, boats);
         }
 
         public int GetMenuChoice()

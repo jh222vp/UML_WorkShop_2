@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36A4A916-80F1-4DDC-B585-97047AF9A35D}</ProjectGuid>
+    <ProjectGuid>{05F1E8EC-8D15-4530-B9AF-26D5E9C35785}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Medlemssystem</RootNamespace>
-    <AssemblyName>Medlemssystem</AssemblyName>
+    <RootNamespace>BoatClub</RootNamespace>
+    <AssemblyName>BoatClub</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,25 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AddBoat.cs" />
-    <Compile Include="Model\AddUser.cs" />
+    <Compile Include="Controller\ProgramController.cs" />
     <Compile Include="Model\Boat.cs" />
-    <Compile Include="Model\DeleteBoat.cs" />
-    <Compile Include="Model\EditBoat.cs" />
+    <Compile Include="Model\BoatModel.cs" />
     <Compile Include="Model\Member.cs" />
-    <Compile Include="Model\SQLconnection.cs" />
-    <Compile Include="Model\Delete.cs" />
-    <Compile Include="Model\EditUser.cs" />
-    <Compile Include="View\Presentation.cs" />
-    <Compile Include="Controller\Program.cs" />
+    <Compile Include="Model\MemberModel.cs" />
+    <Compile Include="Model\SqlConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\ShowUser.cs" />
+    <Compile Include="View\PresentationView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

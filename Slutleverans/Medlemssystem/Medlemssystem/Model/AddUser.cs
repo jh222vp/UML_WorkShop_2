@@ -12,14 +12,8 @@ namespace Medlemssystem
 
         public void addUser(string fname, string lname, int socialSecNumber)
         {
-          Program program = new Program();
-
             string addUserQuery = "INSERT INTO member (firstname, lastname, socialsecuritynumber) VALUES ( " + "'" + fname + "'" + "," + "'" + lname + "'" + "," + "'" + socialSecNumber + "'" + ")";
             sqlConnection.AddUserAndEditBoatSQL(addUserQuery);
-
-            Console.Clear();
-            program.ContinueOnKeyPressed();
-            program.Menu();
         }
     }
 }
