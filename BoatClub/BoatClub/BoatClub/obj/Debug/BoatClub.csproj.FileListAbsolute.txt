@@ -4,3 +4,6 @@ C:\Users\John\Desktop\BoatClub\BoatClub\bin\Debug\BoatClub.pdb
 C:\Users\John\Desktop\BoatClub\BoatClub\obj\Debug\BoatClub.csprojResolveAssemblyReference.cache
 C:\Users\John\Desktop\BoatClub\BoatClub\obj\Debug\BoatClub.exe
 C:\Users\John\Desktop\BoatClub\BoatClub\obj\Debug\BoatClub.pdb
+C:\Users\John\Documents\GitHub\UML_WorkShop_2\BoatClub\BoatClub\BoatClub\bin\Debug\BoatClub.exe.config
+C:\Users\John\Documents\GitHub\UML_WorkShop_2\BoatClub\BoatClub\BoatClub\obj\Debug\BoatClub.exe
+C:\Users\John\Documents\GitHub\UML_WorkShop_2\BoatClub\BoatClub\BoatClub\obj\Debug\BoatClub.pdb

@@ -10,6 +10,28 @@ namespace BoatClub.Model
 {
     class SqlConnection
     {
+        internal Boat Boat
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        internal Member Member
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+    
         public MySqlConnection DatabaseSettings()
         {
             MySqlConnectionStringBuilder connBuilder = new MySqlConnectionStringBuilder();

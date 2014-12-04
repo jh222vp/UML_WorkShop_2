@@ -1,51 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BoatClub.Program" Collapsed="true">
-    <Position X="5.5" Y="2.5" Width="1.5" />
+    <Position X="7" Y="3" Width="1.5" />
+    <AssociationLine Name="MemberModel" Type="BoatClub.Model.MemberModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.088" Y="1.279" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="BoatModel" Type="BoatClub.Model.BoatModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.567" Y="3.164" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="PresentationView" Type="BoatClub.View.PresentationView">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="3.162" Y="3.185" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAAACAAABAAAAMAAAEAAACAAUAIAABCAQAABAAAAAA=</HashCode>
+      <HashCode>gAAAICAAABAAAAMAAQEAAAKAAQAIAABCAQAABAAAAAA=</HashCode>
       <FileName>Controller\ProgramController.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MemberModel" />
+      <Property Name="BoatModel" />
+      <Property Name="PresentationView" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="BoatClub.Model.Boat" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAQBAAAAAAAAAAACEAAAAAAA=</HashCode>
       <FileName>Model\Boat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoatClub.Model.BoatModel" Collapsed="true">
-    <Position X="2.75" Y="4.25" Width="1.5" />
+    <Position X="4.5" Y="4" Width="1.5" />
+    <AssociationLine Name="SqlConnection" Type="BoatClub.Model.SqlConnection">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.327" Y="-2.784" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>Model\BoatModel.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SqlConnection" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="BoatClub.Model.Member" Collapsed="true">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAQAAAQAAARAAAAAAAACAAAAAAAg=</HashCode>
       <FileName>Model\Member.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoatClub.Model.MemberModel" Collapsed="true">
-    <Position X="2.75" Y="1.5" Width="1.5" />
+    <Position X="4.5" Y="3" Width="1.5" />
+    <AssociationLine Name="SqlConnection" Type="BoatClub.Model.SqlConnection">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.234" Y="2.539" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAQAAAAAAACAAQAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAQAAAAAAACAAQAAAAAQABAAAAAAAAA=</HashCode>
       <FileName>Model\MemberModel.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SqlConnection" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="BoatClub.Model.SqlConnection" Collapsed="true">
-    <Position X="2.75" Y="3" Width="1.5" />
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Boat" Type="BoatClub.Model.Boat">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.973" Y="1.914" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Member" Type="BoatClub.Model.Member">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.859" Y="2.466" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAACAgAQAAAAAAAAAAAAAQBAEAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAgAQAAAAAAIAAAAAAQBAEIAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Model\SqlConnection.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Boat" />
+      <Property Name="Member" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="BoatClub.View.PresentationView" Collapsed="true">
-    <Position X="8.5" Y="2.5" Width="1.5" />
+    <Position X="7" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAATIAAAAAAoiAgACAEAQCEKAQQQQAhQAAIgAEBBgJA=</HashCode>
+      <HashCode>AAATIAAAAAAoiAgACAEAQCEKAUQQQAhQAAIgAEBBgJA=</HashCode>
       <FileName>View\PresentationView.cs</FileName>
     </TypeIdentifier>
   </Class>

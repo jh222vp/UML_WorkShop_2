@@ -12,8 +12,41 @@ namespace BoatClub
     {
         MemberModel mm = new MemberModel();
         BoatModel bm = new BoatModel();
-        
+
         PresentationView view = new View.PresentationView();
+
+        internal BoatClub.Model.MemberModel MemberModel
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        internal BoatClub.Model.BoatModel BoatModel
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        internal BoatClub.View.PresentationView PresentationView
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
         
         static void Main(string[] args)
         {

@@ -8,6 +8,17 @@ namespace BoatClub.Model
 {
     class MemberModel
     {
+        internal SqlConnection SqlConnection
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+    
         public List<Member> GetFullMembers()
         {
             SqlConnection connection = new SqlConnection();

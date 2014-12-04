@@ -8,6 +8,17 @@ namespace BoatClub.Model
 {
     class BoatModel
     {
+        internal SqlConnection SqlConnection
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+    
         public void AddBoat(int userChoice, string boatLength, string boatType)
         {
             SqlConnection connection = new SqlConnection();
